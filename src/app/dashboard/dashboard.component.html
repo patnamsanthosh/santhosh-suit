@@ -1,0 +1,46 @@
+<app-header (menuStateChange)="updateSideMenu()" [displayMenu]="displayMenu"></app-header>
+
+<!-- <mat-sidenav-container id="viewContent" fullScreen>
+    <mat-sidenav #sidenav id="sidenav" mode="side" opened [class.menu-open]="sideMenuOpen">
+        <mat-nav-list>
+            <app-side-menu *ngFor="let item of navItems" [item]="item" [menuText]="sideMenuOpen"></app-side-menu>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
+    <h1 style="text-align: center;">
+        Welcome to KPS Dashboard
+    </h1>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a>
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>SubSubmenu Item 1</mat-list-item>
+					<mat-list-item>SubSubmenu Item 2</mat-list-item>
+				</div>
+			</div>
+		</mat-nav-list>
+    <mat-nav-list>
+</mat-nav-list>
+	</mat-sidenav>
+
+	<div class="example-sidenav-content">
+		Main content that resizes properly
+	</div>
+
+</mat-sidenav-container>
+

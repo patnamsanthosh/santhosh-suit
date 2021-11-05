@@ -1,0 +1,38 @@
+<mat-toolbar id="maintoolbar">
+    <button mat-icon-button class="menu-button" (click)="changeMenuState()"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>KPS Unified Dashboard</span>
+    <span class="toolbar-spacer"></span>
+    <div class="row" style="width: 100%;">
+        <div class="col-md-9"></div>
+        <div class="col-md-3">
+            <a [matMenuTriggerFor]="menu">
+                <span>Welcome </span><span>Brant </span>
+            </a>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    Sign out
+                </button>
+            </mat-menu>
+        </div>
+       
+    </div>
+    <!-- <ul class="nav-utility">
+        <li>
+            <a [matMenuTriggerFor]="menu">
+                <span>Welcome </span><span>Brant </span>
+            </a>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    Sign out
+                </button>
+            </mat-menu>
+
+        </li>
+    </ul> -->
+
+</mat-toolbar>

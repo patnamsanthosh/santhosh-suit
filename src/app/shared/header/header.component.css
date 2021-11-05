@@ -1,0 +1,48 @@
+
+    .title {
+        font-size: 20px;
+    }
+
+
+#mainToolbar .toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+#mainToolbar .toolbar-icon {
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+ul.nav-utility li {
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    margin: 0 20px 0 0;
+    mat-icon {
+        color: #fff;
+        cursor: pointer;
+        vertical-align: middle;
+        top:-2px;
+        position: relative;
+
+    }
+}
+
+#maintoolbar {
+    position: fixed;
+    z-index:10;
+    background-color: #4d8ce3;
+    color:#fff;
+  }
+
+  a.mat-menu-trigger {
+    color:#fff;
+    font-size: 10pt;
+  }
+
+  .menu-button {
+    background-color: #4d8ce3;
+    color:#fff;
+    border: none;
+
+  }
